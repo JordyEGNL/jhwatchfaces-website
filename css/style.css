@@ -1,0 +1,501 @@
+/* General options */
+
+@font-face {
+    font-family: Product Sans;
+    src: url(../fonts/Product\ Sans\ Regular.ttf);
+}
+
+@font-face {
+    font-family: Product Sans Bold;
+    src: url(../fonts/Product\ Sans\ Bold.ttf);
+}
+
+:root {
+    --mainThemeColor: #1ba2e1;
+    --order: 1;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --backgroundColor: #090909;
+        --appBoxColor: #1c1c1c;
+        --mainTextColor: #f2f2f2;
+        --secondTextColor: #b5b5b5;
+        --greenButtonBackgroundColor: rgb(45, 91, 45);
+        --greenButtonTextColor: rgb(108, 247, 108);
+        --greenButtonHoverBackgroundColor: rgb(83, 109, 83);
+
+        --grayButtonBackgroundColor: rgb(77, 83, 83);
+        --grayButtonTextColor: #f2f2f2;
+        --grayButtonHoverBackgroundColor: rgb(83, 102, 109);
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --backgroundColor: #f2f2f2;
+        --appBoxColor: #c8c8cb;
+        --mainTextColor: #1d2a2a;
+        --secondTextColor: #5c5e5e;
+        --greenButtonBackgroundColor: rgb(110, 142, 110);
+        --greenButtonTextColor: rgb(120, 243, 120);
+        --greenButtonHoverBackgroundColor: rgb(83, 109, 83);
+
+        --grayButtonBackgroundColor: rgb(118, 121, 121);
+        --grayButtonTextColor: #f2f2f2;
+        --grayButtonHoverBackgroundColor: rgb(149, 153, 154);
+    }
+}
+
+/* Navigation bar */
+.topnav {
+    overflow: hidden;
+    background-color: var(--backgroundColor);
+    font-family: Product Sans Bold;
+    z-index: 1;
+    position: fixed;
+    width: 100%;
+  }
+  
+  .topnav a {
+    float: left;
+    display: block;
+    color: var(--mainTextColor);
+    text-align: center;
+    padding: 20px 16px;
+    text-decoration: none;
+    font-size: 21px;
+    cursor: pointer;
+  }
+
+  /* Active button line under text */
+  .topnav a.active::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 3px; 
+    background-color: var(--mainThemeColor);
+    bottom: 0;
+    left: 0;
+    border-radius: 2px;
+}
+  
+  .topnav 
+  .subItem {
+    color: var(--secondTextColor);
+  }
+  
+  .topnav a:hover {
+    color: var(--mainThemeColor);
+  }
+  
+  .topnav a.active {
+    color: var(--mainThemeColor);
+    background-color: var(--backgroundColor);
+  }
+  
+  .topnav .icon {
+    display: none;
+  }
+  
+  @media screen and (max-width: 600px) {
+    .topnav a:not(:first-child) {display: none;}
+    .topnav a.icon {
+      float: right;
+      display: block;
+      color: var(--mainTextColor);
+    }
+    .topnav a.active::after {
+        visibility: hidden;
+    }
+  }
+  
+  @media screen and (max-width: 600px) {
+    .topnav.responsive {position: relative;}
+    .topnav.responsive .icon {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+    .topnav.responsive a {
+      float: none;
+      display: block;
+      text-align: left;
+      margin: auto;
+    }
+
+    .topnav a {
+        padding: 14px 16px;
+    }
+
+    .topnav.responsive {
+        width: 100%;
+    }
+  }
+
+
+
+
+/* Background */
+body {
+    background-color: var(--backgroundColor);
+    margin: 0;
+}
+
+/* Almost every tekstbox you see */
+.mainTextColor {
+    color: var(--mainTextColor);
+}
+
+/* Subtext, under dev name */
+.darkerSubText {
+    color: var(--secondTextColor);
+}
+
+/* Boxes with the apps in it */
+.appBox {
+    background-color: var(--appBoxColor);
+}
+
+/* green button */
+
+.greenButton {
+    color: var(--greenButtonTextColor);
+    background-color: var(--greenButtonBackgroundColor);
+}
+
+.greenButton:hover {
+    background-color: var(--greenButtonHoverBackgroundColor);
+}
+
+.grayButton:hover {
+    background-color: var(--grayButtonHoverBackgroundColor);
+}
+
+
+.grayButton {
+    color: var(--grayButtonTextColor);
+    background-color: var(--grayButtonBackgroundColor);
+}
+
+
+h1 {
+    font-family: Product Sans;
+}
+
+a {
+    font-family: Product Sans;
+}
+
+
+.noMargin {
+    margin: 0;
+}
+
+.textCenter {
+    text-align: center;
+}
+
+/* Padding for sections */
+.centerSocials {
+    width: clamp(10rem, 80%, 25rem);
+    padding: 0.5rem 2rem;
+    margin: auto;
+}
+
+.centerSmall {
+    width: clamp(10rem, 80%, 45rem);
+    padding: 0.5rem 2rem;
+    margin: auto;
+}
+
+.centerMedium {
+    width: clamp(10rem, 90%, 65rem);
+    padding: 0.5rem 1rem;
+    margin: auto;
+}
+
+.centerBig {
+    width: clamp(10rem, 90%, 95rem);
+    padding: 0.5rem 1rem;
+    margin: auto;
+}
+
+/* Full header with developer information */
+.sectionHeader {
+    font-size: 1.5rem;
+    padding-top: 2.5rem;
+
+}
+
+/* Every normal tekst including headings and app info */
+
+
+/* Header title, developer name */
+
+.developerTitle {
+    font-size: 2.45rem;
+    margin-bottom: 1rem;
+    font-family: Product Sans Bold;
+}
+
+.headerTitle {
+    font-family: Product Sans Bold;
+    margin-top: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Text under header, information about developer */
+.darkerSubText {
+    font-size: 1.2rem;
+    font-family: Product Sans;
+}
+
+/* Image under developer information */
+.headerImg {
+    margin-top: 2.5rem;
+}
+
+/* Max width of image under developer information */
+.headerProfileLogo {
+    max-width: 250px;
+}
+
+/* Google Play badge under developer logo */
+.headerGooglePlayBadge {
+    max-width: 240px;
+    margin-top: 1.5rem;
+}
+
+/* General spacer line between sections */
+.spacer {
+    font-size: 2rem;
+    text-decoration: line-through;
+
+}
+
+[featured] {
+    scroll-margin-top: 2ex;
+}
+
+
+
+
+/* App box layout and spacing */
+.appBox {
+    border-radius: 25px;
+    padding: 1.25rem;
+    margin: 2%;
+    flex-grow: 1;
+    justify-content: space-between;
+    flex-direction: column;
+    display: flex;
+}
+
+
+
+
+
+
+
+.featuredAppTitlePaddingBottom {
+    padding-bottom: 1rem;
+}
+
+.portfolioAppTitlePaddingBottom {
+    padding-bottom: 1rem;
+}
+
+.appTitleSize{
+    font-size: 1.6rem;
+    font-family: Product Sans;
+}
+
+.downloadButtonBox {
+    border-radius: 15px;
+    padding: 1.5rem 0rem;
+    text-transform: uppercase;
+    margin-top: 1.25rem;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.downloadButton {
+    border-radius: 15px;
+    padding: 1.5rem;
+    text-transform: uppercase;
+    margin-top: 1.25rem;
+    font-weight: bold;
+    font-size: 22px;
+    text-align: center;
+}
+
+
+.downloadButton:link {
+    text-decoration: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Featured app box layout and spacing */
+.featuredAppsColumns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+@media (max-width: 600px) {
+    .featuredAppsColumns { grid-template-columns: 1fr ; place-items: center }
+}
+
+/* Portfolio app box layout and spacing */
+.portfolioAppsColumns {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+@media (max-width: 600px) {
+    .portfolioAppsColumns { grid-template-columns: 1fr ; place-items: center }
+  }
+
+
+@media (min-width: 601px) and (max-width: 950px) {
+    .portfolioAppsColumns { grid-template-columns: 1fr 1fr; }
+}
+
+@media (min-width: 951px) and (max-width: 1200px) {
+    .portfolioAppsColumns { grid-template-columns: 1fr 1fr 1fr; }
+}
+
+
+.portfolioAppLogo {
+    width: clamp(50px, 90%, 500px);
+    margin: auto;
+    transition: all 0.45s ease-in-out;
+}
+
+.portfolioAppLogo:hover {
+    transform: scale(1.03);
+}
+
+.featuredAppLogo {
+    width: clamp(50px, 90%, 500px);
+    margin: auto;
+    transition: all 0.45s ease-in-out;
+}
+
+/* Featured app logo hover animation */
+.featuredAppLogo:hover {
+    transform: scale(1.03);
+}
+
+.materialYouButton {
+    visibility: hidden;
+}
+
+@media (max-width: 950px) {
+    .materialYouButton {
+        visibility: visible;
+        background-color: white;
+        color: var(--mainTextColor);
+        border: none;
+        border-radius: 35%;
+        border-color: white;
+        width: 75px;
+        height: 75px;
+        position: fixed;
+        bottom: 20px; /* Adjust this value to set the button's position */
+        right: 20px; /* Adjust this value to set the button's position */
+    }
+}
+
+
+.materialYouButton img {
+    position: relative;
+    width: 60%;
+    top: 2px;
+}
+
+
+
+.appIconBorderRadius {
+    border-radius: 20px;
+}
+
+
+.socialMediaColumns {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.socialMediaBox {
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+}
+
+.socialMediaBox a {
+    display: block;
+    margin-right: 10px;
+    color: var(--mainTextColor)
+}
+
+/* Social media icons */
+.socialMediaBox i {
+    font-size: 64px;
+    color: var(--mainTextColor);
+    padding-right: 1rem;
+}
+
+/* Social media text */
+.socialMediaBox a1, .socialMediaBox h1 {
+    color: var(--mainTextColor);
+    margin: 0;
+    text-align: left;
+    font-family: Product Sans;
+}
+
+.socialMediaBox h1 {
+    font-family: Product Sans Bold;
+}
+
+.privacyText {
+    text-align: left;
+    white-space: pre-line;
+    margin: 0;
+}
+
+
+/* Hide/Show animation with animation.js */
+.hidden {
+    opacity: 0;
+    transition: all calc(0.1s * var(--order)) ease-in-out;
+    filter: blur(5px);
+    transform: translateX(-10%);
+}
+
+.show {
+    opacity: 1;
+    filter: blur(0px);
+    transform: translateX(0);
+}
+
+/* People who prefer no animations */
+@media(prefers-reduced-motion) {
+    .hidden {
+        transition: none;
+    }
+}
