@@ -4,49 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coupon Generator</title>
-    <script src="https://www.google.com/recaptcha/enterprise.js?render=6Lc-FjEoAAAAABYOrpVCfmHfEHMRYfr6jQ0GBiWC"></script>
-
-
 </head>
 <body>
     <h1>Coupon Generator</h1>
     <button id="get-coupon">Get Coupon</button>
-    <div class="g-recaptcha" data-sitekey="6Lc-FjEoAAAAABYOrpVCfmHfEHMRYfr6jQ0GBiWC"></div>
     <p id="coupon-result"></p>
 
     <script>
-document.addEventListener('DOMContentLoaded', function() {
-    var couponResult = sessionStorage.getItem('couponResult');
-    if (couponResult) {
-        document.getElementById('coupon-result').textContent = couponResult;
-    }
+        document.addEventListener('DOMContentLoaded', function() {
+            var couponResult = sessionStorage.getItem('couponResult');
+            if (couponResult) {
+                document.getElementById('coupon-result').textContent = couponResult;
+            }
 
-    document.getElementById('get-coupon').addEventListener('click', function() {
-        var hasReceivedCoupon = sessionStorage.getItem('hasReceivedCoupon');
+            document.getElementById('get-coupon').addEventListener('click', function() {
+                var hasReceivedCoupon = sessionStorage.getItem('hasReceivedCoupon');
 
-        if (!hasReceivedCoupon) {
-            // Send a request to the server to get a coupon
-            fetch('https://coupons.jhwatchfaces.com/jhwdigitalbits3/get_coupon.php')
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('Network response was not ok');
-                    }
-                    return response.text();
-                })
-                .then(data => {
-                    document.getElementById('coupon-result').textContent = data;
-                    sessionStorage.setItem('hasReceivedCoupon', 'true');
-                    sessionStorage.setItem('couponResult', data); // Store coupon code
-                })
-                .catch(error => {
-                    alert('Error: Unable to get coupon code');
-                    console.error('Error:', error);
-                });
-        } else {
-            alert('You have already received a coupon.');
-        }
-    });
-});
+                if (!hasReceivedCoupon) {
+                    // Send a request to the server to get a coupon
+                    fetch('https://coupons.jhwatchfaces.com/jhwdigitalbits3/get_coupon.php')
+                        .then(response => {
+                            if (!response.ok) {
+                                throw new Error('Network response was not ok');
+                            }
+                            return response.text();
+                        })
+                        .then(data => {
+                            document.getElementById('coupon-result').textContent = data;
+                            sessionStorage.setItem('hasReceivedCoupon', 'true');
+                            sessionStorage.setItem('couponResult', data); // Store coupon code
+                        })
+                        .catch(error => {
+                            alert('Error: Unable to get coupon code');
+                            console.error('Error:', error);
+                        });
+                } else {
+                    alert('You have already received a coupon.');
+                }
+            });
+        });
     </script>
     
 </body>
