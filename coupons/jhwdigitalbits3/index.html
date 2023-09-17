@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coupon Generator</title>
+</head>
+<body>
+    <h1>Coupon Generator</h1>
+    <button id="get-coupon">Get Coupon</button>
+    <p id="coupon-result"></p>
+
+    <script>
+document.getElementById('get-coupon').addEventListener('click', function() {
+    var hasReceivedCoupon = sessionStorage.getItem('hasReceivedCoupon');
+
+    if (!hasReceivedCoupon) {
+        // Send a request to the server to get a coupon
+        fetch('https://coupons.jhwatchfaces.com/jhwdigitalbits3/get_coupon.php')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.text();
+            })
+            .then(data => {
+                document.getElementById('coupon-result').textContent = data;
+                sessionStorage.setItem('hasReceivedCoupon', 'true');
+                sessionStorage.setItem('couponCode', data);
+            })
+            .catch(error => {
+                alert('Error: Unable to get coupon code');
+                console.error('Error:', error);
+            });
+    } else {
+        alert('You have already received a coupon.');
+        document.getElementById('coupon-result').textContent = couponCode;
+    }
+});
+    </script>
+    
+</body>
+</html>
