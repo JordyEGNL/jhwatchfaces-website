@@ -3,148 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/style.css">
-    <title>App Developer</title>
-    <script type="module" src="./js/index.js"></script>
+    <title>JH Watchfaces</title>
+    <style>
+        @font-face {
+            font-family: Product Sans;
+            src: url(../fonts/Product\ Sans\ Regular.ttf);
+        } 
+        body {
+            display: flex;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+        }
 
+        h1 {
+            text-align: center;
+            font-family: Product Sans;
+        }
+    </style>
 </head>
 <body>
-
-    <!-- Navbar template taken from w3school and edited it -->
-    <div class="topnav" id="myTopnav">
-        <a href="#" onclick="navbarMobile()" class="active">Home</a>
-        <a href="#featured" onclick="navbarMobile()" class="subItem">Featured</a>
-        <a href="#apps" onclick="navbarMobile()" class="subItem">Apps</a>
-        <a href="../contact">Contact</a>
-        <a href="./privacy-policy">Privacy Policy</a>
-        <a href="javascript:void(0);" class="icon" onclick="navbarMobile(), scrollToTop()">
-          <i class="fa fa-bars"></i>
-        </a>
-    </div>
-
-    <br>
-    <div class="sectionHeader centerSmall textCenter">
-        <h1 class="developerTitle mainTextColor">JH Watchfaces</h1>
-        <p1 class="darkerSubText">Making amoled friendly watch faces for your Wear OS smartwatch.</p1>
-        <div class="headerImg">
-            <img class="headerProfileLogo" src="./img/logo-text-only.png">
-        </div>
-        <div>
-            <a href="https://play.google.com/store/apps/dev?id=5003816928530763896">
-                <img class="headerGooglePlayBadge" src="./img/google-play-badge.png">
-            </a>
-        </div>
-    </div>
-
-    <div class="spacer centerSmall textCenter">
-        <a class="mainTextColor scrollMargin" id="featured">--------</a>
-    </div>
-
-    <div class="sectionFeatured centerSmall textCenter">
-        <div class="headerTitle">
-            <h1 class="mainTextColor noMargin">FEATURED</h1>
-        </div>
-        <div class="featuredAppsColumns">
-            <!-- Featured App 1 -->
-            <div class="appBox hidden" style="--order: 1">
-                <h1 class="mainTextColor featuredAppTitlePaddingBottom noMargin appTitleSize">JHW Digital Bits 3</h1>
-                <div class="featuredAppLogo">
-                    <img class="featuredAppLogo appIconBorderRadius" src="./img/apps/jhw-digital-bits-3/logo.png">
-                </div>
-                <div class="downloadButtonBox">
-                    <a href="https://play.google.com/store/apps/details?id=com.jhwatchfaces.jhwdigitalbitsthree" class="downloadButton greenButton">Download</a>
-                </div>
-            </div>
-            <!-- Featured App 2 -->
-            <div class="appBox hidden" style="--order: 2">
-                <h1 class="mainTextColor featuredAppTitlePaddingBottom noMargin appTitleSize">Digital Pixel Plus</h1>
-                <div class="featuredAppLogo">
-                    <img class="featuredAppLogo appIconBorderRadius" src="./img/apps/digital-pixel-plus/logo.png">
-                </div>
-                <div class="downloadButtonBox">
-                    <a href="https://play.google.com/store/apps/details?id=com.jhwatchfaces.digitalpixelplus" class="downloadButton greenButton">Download</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-    <div class="spacer centerSmall textCenter">
-        <a class="mainTextColor" id="apps">--------</a>
-    </div>
-
-    <div class="sectionPortfolio centerBig textCenter">
-        <div class="headerTitle">
-            <h1 class="mainTextColor noMargin">PORTFOLIO</h1>
-        </div>
-        <div class="portfolioAppsColumns">
-            <!-- Portfolio App 1 -->
-            <div class="appBox appBoxPortfolio hidden" style="--order: 2">
-                <h1 class="mainTextColor portfolioAppTitlePaddingBottom appTitleSize noMargin">App Name 1</h1>
-                <div class="portfolioAppLogo">
-                    <img class="portfolioAppLogo appIconBorderRadius" src="https://placehold.jp/512x512.png">
-                </div>
-                <div class="downloadButtonBox">
-                    <a class="downloadButton grayButton" href="google.com">Download</a>
-                </div>
-            </div>
-            <!-- Portfolio App 2 -->
-            <div class="appBox appBoxPortfolio hidden" style="--order: 3">
-                <h1 class="mainTextColor portfolioAppTitlePaddingBottom appTitleSize noMargin">APP NAME WITH TWO LINES</h1>
-                <div class="portfolioAppLogo">
-                    <img class="portfolioAppLogo appIconBorderRadius" src="https://placehold.jp/512x512.png">
-                </div>
-                <div class="downloadButtonBox">
-                    <a class="downloadButton grayButton" href="google.com">Download</a>
-                </div>
-            </div>
-            <!-- Portfolio App 3 -->
-            <div class="appBox appBoxPortfolio hidden" style="--order: 4">
-                <h1 class="mainTextColor portfolioAppTitlePaddingBottom appTitleSize noMargin">APP NAME WITH TWO LINES</h1>
-                <div class="portfolioAppLogo">
-                    <img class="portfolioAppLogo appIconBorderRadius" src="https://placehold.jp/512x512.png">
-                </div>
-                <div class="downloadButtonBox">
-                    <a class="downloadButton grayButton" href="google.com">Download</a>
-                </div>
-            </div>
-            <!-- Portfolio App 4 -->
-            <div class="appBox appBoxPortfolio hidden" style="--order: 5">
-                <h1 class="mainTextColor portfolioAppTitlePaddingBottom appTitleSize noMargin">APP NAME WITH TWO LINES</h1>
-                <div class="portfolioAppLogo">
-                    <img class="portfolioAppLogo appIconBorderRadius" src="https://placehold.jp/512x512.png">
-                </div>
-                <div class="downloadButtonBox">
-                    <a class="downloadButton grayButton" href="google.com">Download</a>
-                </div>
-            </div>
-            <!-- Portfolio App 5 -->
-            <div class="appBox appBoxPortfolio hidden" style="--order: 6">
-                <h1 class="mainTextColor portfolioAppTitlePaddingBottom appTitleSize noMargin">APP NAME WITH TWO LINES</h1>
-                <div class="portfolioAppLogo">
-                    <img class="portfolioAppLogo appIconBorderRadius" src="https://placehold.jp/512x512.png">
-                </div>
-                <div class="downloadButtonBox">
-                    <a class="downloadButton grayButton" href="google.com">Download</a>
-                </div>
-            </div>
-
-
-
-        </div>
-    </div>
-
-
+    <h1>Site is coming soon...</h1>
 </body>
-
-<footer>
-    <button class="materialYouButton">
-        <a href="https://play.google.com/store/games?device=windows">
-          <img src="./img/google-play-icon.png">
-        </a>
-    </button>
-    <script src="./js/animations.js"></script>
-    <script src="./js/navbar.js"></script>
-    <script src="https://kit.fontawesome.com/a43959776c.js" crossorigin="anonymous"></script>
-</footer>
 </html>
