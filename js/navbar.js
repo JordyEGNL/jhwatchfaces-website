@@ -1,31 +1,24 @@
-// This function opens and closed the nav bar in mobile view when navbarMobile is triggered
-function navbarMobile() {
-    var x = document.getElementById("myTopnav");
-    if (x.className === "topnav") {
-      x.className += " responsive";
-    } else {
-      x.className = "topnav";
+document.addEventListener('DOMContentLoaded', function() {
+  let menu = document.querySelector('#navbarIcon');
+  let navbar = document.querySelector('.navbarItems');
+  let navbarFull = document.querySelector('.navbarFull');
+
+  menu.addEventListener('click', function(e) {
+      e.stopPropagation(); // prevents event from bubbling up to the document object
+      navbar.classList.toggle('open');
+      if (navbar.classList.contains('open')) {
+        menu.innerHTML = 'close';
+      } else {
+        menu.innerHTML = 'menu';
+      }
+
       
+  });
+
+  document.addEventListener('click', function(e) {
+    if (!navbarFull.contains(e.target) && e.target !== menu) {
+      navbar.classList.remove('open');
+      menu.innerHTML = 'menu';
     }
-  }
-
-// This function scrolls the webpage back to the top
-function scrollToTop() {
-    window.scrollTo(0, 0);
-}
-
-
-// This functions smooth scrolls to the target, for the navbar
-function smoothScroll(targetId) {
-    var x = document.getElementById("myTopnav");
-    var targetElement = document.getElementById(targetId);
-    window.scrollTo({
-        top: targetElement.offsetTop,
-        behavior: 'smooth'
-    });
-    x.className = "topnav";
-}
-
-
-
-
+  });
+});

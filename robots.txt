@@ -1,0 +1,11 @@
+User-agent: *
+
+Disallow: /coupons/
+Disallow: /js/
+Disallow: /css/
+Disallow: /fonts/
+Disallow: /git/
+Disallow: .git
+Disallow: .gitignore
+
+Sitemap: https://jhwatchfaces.com/sitemap.xml

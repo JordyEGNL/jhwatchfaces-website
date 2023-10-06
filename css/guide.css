@@ -1,0 +1,54 @@
+.sectionGuide {
+    display: grid;
+    grid-template-columns: repeat( auto-fit, minmax(300px, 1fr) );
+    gap: 2rem;
+}
+
+/* Guide boxes */
+.sectionGuide > div {
+    border-radius: 25px;
+    flex-grow: 1;
+    justify-content: space-between;
+    flex-direction: column;
+    background-color: var(--appBoxColor);
+    transition: all 0.45s ease-in-out;
+    font-family: 'Roboto', sans-serif;
+    word-wrap: break-word;
+    text-align: left;
+    padding: 10px;
+}
+
+/* Images in guide boxes */
+
+.sectionGuide > div img {
+    max-width: 100%;
+    margin: 0 auto;
+    border-radius: 25px;
+    display: block;
+}
+
+.sectionGuide .blur-load {
+    max-width: 100%;
+    margin: 0 auto;
+    border-radius: 25px;
+    margin: 2% auto;
+}
+
+
+
+
+.sectionGuide > div a {
+    display: block;
+    margin: 0;
+    padding: 10px;
+    height: max-content;
+    font-family: Roboto;
+}
+
+.sectionGuide > div h1 {
+    word-wrap: break-word;
+    font-size: 1.4rem;
+    text-align: center;
+    padding: 4% 0;
+    color: var(--primaryTextThemed);
+}

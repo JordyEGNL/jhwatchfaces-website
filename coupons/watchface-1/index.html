@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/coupons.css">
+    <link rel="stylesheet" href="/css/lazyloading.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- 
+        SEO STUFF 
+    -->
+
+    <meta name="robots" content="noindex"> <!-- Disallow indexing for coupon generator -->
+    <meta name="og:title" property="og:title" content="JH Watchfaces - Privacy Policy">
+    <meta name="description" content="JH Watchfaces. Making amoled friendly watch faces for your Wear OS smartwatch.">
+    <meta name="og:description" content="JH Watchfaces. Making amoled friendly watch faces for your Wear OS smartwatch.">
+    
+    <link rel="canonical" href="https://jhwatchfaces.com/coupons/watchface-1/">
+    <meta property="og:url" content="https://jhwatchfaces.com/coupons/watchface-1/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://jhwatchfaces.com/img/JHW-Logo-2023.webp" />
+
+    <link rel="icon" type="image/png" sizes="96x96" href="/img/favicon-96x96.png">
+    <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+
+    <title>JH Watchfaces - Coupon Generator</title>
+
+    <!-- 
+        End of SEO
+    -->
+
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <div class="navbarFull">
+
+        <!-- Website logo -->
+        <a href="/" class="navbarLogo"><img src="/img/logo-text-only.webp"> </img></a>
+
+        <!-- Main site items -->
+        <ul class="navbarItems">
+            <li><a href="/">Home</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <li><a href="/privacy">Privacy Policy</a></li>
+            <li><a href="/guide">Installation Guide</a></li>
+        </ul>
+
+        <!-- Hamburger menu  -->
+        <div class="navbarMain">
+            <span id="navbarIcon" class="material-symbols-outlined">menu</span>
+        </div>
+
+    </div>
+
+    <br>
+    <div class="mainContent" id="mainContent">
+
+        <div class="centerMedium textCenter">
+            <div class="headerTitle">
+                <h1 class="mainTextColor noMargin textLeft sectionHeader">Coupon Generator</h1>
+            </div>
+
+            <div class="couponColumns appsColumns">
+
+                <!-- Featured App 1 -->
+                <div class="fadeLeftOnLoad" style="--order: 1">
+                    <h1>JHW Digital Bits 3</h1>
+
+                    <div class="blur-load" style="background-image: url(/img/apps/jhw-digital-bits-3/small.jpg);">
+                        <img draggable="false" src="/img/apps/jhw-digital-bits-3/logo.webp" loading="lazy">
+                    </div>
+
+
+                
+
+                    <div class="couponResultBox">
+                        <p id="coupon-result" class="couponResult"></p>
+                    </div>
+
+                    <div id="getCoupon" class="getCouponBox">
+                        <a id="getCoupon" class="downloadButton primaryButton">Get Coupon</a>
+                    </div>
+
+                    <div class="redeemBoxes" id="actionButtons">
+                        <a id="copyButton" class="downloadButton secondaryButton redeemBox"><span class="material-symbols-outlined">
+                            content_copy
+                            </span> Copy</a>
+                        <a href="https://play.google.com/redeem" class="downloadButton primaryButton redeemBox">Redeem</a>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    
+    
+
+    
+</body>
+<footer>
+    <script src="/js/coupon-1.js"></script>
+    <script src="/js/navbar.js"></script>
+    <script src="/js/animations.js"></script>
+</footer>
+</html>

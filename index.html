@@ -1,150 +1,308 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html> -->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/style.css">
-    <title>App Developer</title>
-    <script type="module" src="./js/index.js"></script>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/lazyloading.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- 
+        SEO STUFF 
+    -->
+
+    <meta name="og:title" property="og:title" content="JH Watchfaces - Wear OS watchfaces">
+    <meta name="description" content="JH Watchfaces. Making amoled friendly watch faces for your Wear OS smartwatch.">
+    <meta name="og:description" content="JH Watchfaces. Making amoled friendly watch faces for your Wear OS smartwatch.">
+    <meta name="keywords" content="JH Watchfaces, watch faces, watchfaces, watchface, galaxy watch, galaxywatch, samsung, watch active, google play store">
+    <link rel="canonical" href="https://jhwatchfaces.com/">
+    <meta property="og:url" content="https://jhwatchfaces.com/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://jhwatchfaces.com/img/JHW-Logo-2023.webp" />
+
+    <link rel="icon" type="image/png" sizes="96x96" href="/img/favicon-96x96.png">
+    <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+
+    <title>JH Watchfaces - Wear OS watch faces</title>
+
+    <!-- 
+        End of SEO
+    -->
 
 </head>
 <body>
 
-    <!-- Navbar template taken from w3school and edited it -->
-    <div class="topnav" id="myTopnav">
-        <a href="#" onclick="navbarMobile()" class="active">Home</a>
-        <a href="#featured" onclick="navbarMobile()" class="subItem">Featured</a>
-        <a href="#apps" onclick="navbarMobile()" class="subItem">Apps</a>
-        <a href="../contact">Contact</a>
-        <a href="./privacy-policy">Privacy Policy</a>
-        <a href="javascript:void(0);" class="icon" onclick="navbarMobile(), scrollToTop()">
-          <i class="fa fa-bars"></i>
-        </a>
+    <!-- Navbar -->
+    <div class="navbarFull">
+
+        <!-- Website logo -->
+        <a href="#" class="navbarLogo"><img src="/img/logo-text-only.webp"></a>
+
+        <!-- Main site items -->
+        <ul class="navbarItems">
+            <li><a class="active" href="#">Home</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <li><a href="/privacy">Privacy Policy</a></li>
+            <li><a href="/guide">Installation Guide</a></li>
+        </ul>
+
+        
+        <!-- Hamburger menu  -->
+        <div class="navbarMain">
+            <span id="navbarIcon" class="material-symbols-outlined">menu</span>
+        </div>
+
+        
+
     </div>
+
+
 
     <br>
-    <div class="sectionHeader centerSmall textCenter">
-        <h1 class="developerTitle mainTextColor">JH Watchfaces</h1>
-        <p1 class="darkerSubText">Making amoled friendly watch faces for your Wear OS smartwatch.</p1>
-        <div class="headerImg">
-            <img class="headerProfileLogo" src="./img/logo-text-only.png">
+    <div class="mainContent" id="mainContent">
+        <div class="headerColumns centerBig">
+            <div class="sectionHeader textCenter fadeLeftOnLoad">
+                <h1>JH Watchfaces</h1>
+                <p>Making amoled friendly watch faces for your Wear OS smartwatch.</p>
+                <a href="https://play.google.com/store/apps/dev?id=5003816928530763896">
+                    <img src="/img/logo-text-only.webp">
+                    <img src="/img/google-play-badge.webp">
+                </a>
+            
+            </div>
+            <div class="section sectionFeatured textCenter centerBigDesktop">
+
+                <div class="headerTitle textLeft textCenterMobile">
+                    <h1>Featured</h1>
+                </div>
+
+                <div class="featuredAppsColumns appsColumns">
+                    <!-- Featured App 1 -->
+                    <div class="fadeLeftOnLoad" style="--order: 1">
+                        <h1>JHW Digital Bits 3</h1>
+
+                        <div class="blur-load" style="background-image: url(/img/apps/jhw-digital-bits-3/small.jpg);">
+                            <img draggable="false" src="/img/apps/jhw-digital-bits-3/logo.webp" loading="lazy">
+                        </div>
+
+                        <a href="/coupons/watchface-1/" class="primaryButton">Get coupon</a>
+
+                    </div>
+                    <!-- Featured App 2 -->
+                    <div class="fadeLeftOnLoad" style="--order: 2">
+                        <h1>Digital Pixel Plus</h1>
+
+                        <div class="blur-load" style="background-image: url(/img/apps/digital-pixel-plus/small.jpg);">
+                            <img draggable="false" src="/img/apps/digital-pixel-plus/logo.webp" loading="lazy">
+                        </div>
+
+                        <a href="https://play.google.com/store/apps/details?id=com.jhwatchfaces.digitalpixelplus" class="primaryButton">Download</a>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div>
-            <a href="https://play.google.com/store/apps/dev?id=5003816928530763896">
-                <img class="headerGooglePlayBadge" src="./img/google-play-badge.png">
-            </a>
+
+
+
+        <div class="sectionPortfolio section centerBig textCenter" id="portfolio">
+
+            <div class="headerTitle textLeft">
+                <h1>Portfolio</h1>
+            </div>
+
+            <div class="portfolioAppsColumns appsColumns">
+                <!-- 
+                    Only the first 8 apps are shown 
+                -->
+
+                <!-- Portfolio App 1 -->
+                <div class="fadeLeftOnLoad loadMoreItems">
+                    <h1>JHW Digital Sport 2</h1>
+                    <div class="blur-load" style="background-image: url(/img/apps/jhw-digital-sport-2/small.jpg);">
+                        <img draggable="false" src="/img/apps/jhw-digital-sport-2/logo.webp" loading="lazy">
+                    </div>
+                    <a class="secondaryButton" href="https://play.google.com/store/apps/details?id=com.jhwatchfaces.jhwdigitalsporttwo" target="_blank">Download</a>
+                </div>
+
+                <!-- Portfolio App 2 -->
+                <div class="fadeLeftOnLoad loadMoreItems">
+                    <h1>Material Stack</h1>
+                    <div class="blur-load" style="background-image: url(/img/apps/material-stack/small.jpg);">
+                        <img draggable="false" src="/img/apps/material-stack/logo.webp" loading="lazy">
+                    </div>
+                    <a class="secondaryButton" href="https://play.google.com/store/apps/details?id=com.jhwatchfaces.materialstack" target="_blank">Download</a>
+                </div>
+
+                <!-- Portfolio App 3 -->
+                <div class="fadeLeftOnLoad loadMoreItems">
+                    <h1>JHW Digital Bits 2</h1>
+                    <div class="blur-load" style="background-image: url(/img/apps/jhw-digital-bits-2/small.jpg);">
+                        <img draggable="false" src="/img/apps/jhw-digital-bits-2/logo.webp" loading="lazy">
+                    </div>
+                    <a class="secondaryButton" href="https://play.google.com/store/apps/details?id=com.jhwatchfaces.jhwdigitalbitstwo" target="_blank">Download</a>
+                </div>
+
+                <!-- Portfolio App 4 -->
+                <div class="fadeLeftOnLoad loadMoreItems">
+                    <h1>JHW Digital You</h1>
+                    <div class="blur-load" style="background-image: url(/img/apps/jhw-digital-you/small.jpg);">
+                        <img draggable="false" src="/img/apps/jhw-digital-you/logo.webp" loading="lazy">
+                    </div>
+                    <a class="secondaryButton" href="https://play.google.com/store/apps/details?id=com.jhwatchfaces.jhwdigitalyou" target="_blank">Download</a>
+                </div>
+
+                <!-- Portfolio App 5 -->
+                <div class="fadeLeftOnLoad loadMoreItems">
+                    <h1>JHW Digital Bits</h1>
+
+                    <div class="blur-load" style="background-image: url(/img/apps/jhw-digital-bits/small.jpg);">
+                        <img draggable="false" src="/img/apps/jhw-digital-bits/logo.webp" loading="lazy">
+                    </div>
+
+                    <a class="secondaryButton" href="https://play.google.com/store/apps/details?id=com.jhwatchfaces.jhwdigitalbits" target="_blank">Download</a>
+                </div>
+                
+                <!-- Portfolio App 6 -->
+                <div class="fadeLeftOnLoad loadMoreItems">
+                    <h1>Clean Digital</h1>
+
+                    <div class="blur-load" style="background-image: url(/img/apps/clean-digital/small.jpg);">
+                        <img draggable="false" src="/img/apps/clean-digital/logo.webp" loading="lazy">
+                    </div>
+
+                    <a class="secondaryButton" href="https://play.google.com/store/apps/details?id=com.jhwatchfaces.cleandigital" target="_blank">Download</a>
+                </div>
+
+                <!-- Portfolio App 7  -->
+                <div class="fadeLeftOnLoad loadMoreItems">
+                    <h1>Minimal Visual</h1>
+
+                    <div class="blur-load" style="background-image: url(/img/apps/minimal-visual/small.jpg);">
+                        <img draggable="false" src="/img/apps/minimal-visual/logo.webp" loading="lazy">
+                    </div>
+
+                    <a class="secondaryButton" href="https://play.google.com/store/apps/details?id=com.jhwatchfaces.minimalvisual" target="_blank">Download</a>
+                </div>
+
+                <!-- Portfolio App 8  -->
+                <div class="fadeLeftOnLoad loadMoreItems">
+                    <h1>Modern Vertical</h1>
+
+                    <div class="blur-load" style="background-image: url(/img/apps/modern-vertical/small.jpg);">
+                        <img draggable="false" src="/img/apps/modern-vertical/logo.webp" loading="lazy">
+                    </div>
+
+                    <a class="secondaryButton" href="https://play.google.com/store/apps/details?id=com.jhwatchfaces.modernvertical" target="_blank">Download</a>
+                </div>
+
+                <!-- Portfolio App 9  -->
+                <div class="fadeLeftOnLoad loadMoreItems">
+                    <h1>JHW Digital Informer</h1>
+
+                    <div class="blur-load" style="background-image: url(/img/apps/jhw-digital-informer/small.jpg);">
+                        <img draggable="false" src="/img/apps/jhw-digital-informer/logo.webp" loading="lazy">
+                    </div>
+
+                    <a class="secondaryButton" href="https://play.google.com/store/apps/details?id=com.jhwatchfaces.jhwdigitalinformer" target="_blank">Download</a>
+                </div>
+
+                <!-- Portfolio App 10  -->
+                <div class="fadeLeftOnLoad loadMoreItems">
+                    <h1>JHW Hybrid B</h1>
+
+                    <div class="blur-load" style="background-image: url(/img/apps/jhw-hybrid-b/small.jpg);">
+                        <img draggable="false" src="/img/apps/jhw-hybrid-b/logo.webp" loading="lazy">
+                    </div>
+
+                    <a class="secondaryButton" href="https://play.google.com/store/apps/details?id=com.jhwatchfaces.jhwhybridb2" target="_blank">Download</a>
+                </div>
+
+                <!-- Portfolio App 11  -->
+                <div class="fadeLeftOnLoad loadMoreItems">
+                    <h1>JHW Analog 7</h1>
+
+                    <div class="blur-load" style="background-image: url(/img/apps/jhw-analog-7/small.jpg);">
+                        <img draggable="false" src="/img/apps/jhw-analog-7/logo.webp" loading="lazy">
+                    </div>
+
+                    <a class="secondaryButton" href="https://play.google.com/store/apps/details?id=com.jhwatchfaces.jhwanalog7" target="_blank">Download</a>
+                </div>
+
+                <!-- Portfolio App 12  -->
+                <div class="fadeLeftOnLoad loadMoreItems">
+                    <h1>JHW Digital F</h1>
+
+                    <div class="blur-load" style="background-image: url(/img/apps/jhw-digital-f/small.jpg);">
+                        <img draggable="false" src="/img/apps/jhw-digital-f/logo.webp" loading="lazy">
+                    </div>
+
+                    <a class="secondaryButton" href="https://play.google.com/store/apps/details?id=com.jhwatchfaces.jhwdigitalf" target="_blank">Download</a>
+                </div>
+
+                <!-- Portfolio App 13  -->
+                <div class="fadeLeftOnLoad loadMoreItems">
+                    <h1>JHW Thin Plus</h1>
+
+                    <div class="blur-load" style="background-image: url(/img/apps/jhw-thin-plus/small.jpg);">
+                        <img draggable="false" src="/img/apps/jhw-thin-plus/logo.webp" loading="lazy">
+                    </div>
+
+                    <a class="secondaryButton" href="https://play.google.com/store/apps/details?id=com.jhwatchfaces.jhwthinplus" target="_blank">Download</a>
+                </div>
+                
+                
+            </div>
         </div>
+
+        <!-- Load more button -->
+        <div class="centerBig textCenter">
+            <a class="loadmoreButton">Load more</a>
+        </div>
+        
+        <div class="spacer centerSmall textCenter"></div>
+
     </div>
-
-    <div class="spacer centerSmall textCenter">
-        <a class="mainTextColor scrollMargin" id="featured">--------</a>
+    <button class="materialYouButton">
+        <a href="https://play.google.com/store/apps/dev?id=5003816928530763896">
+          <img src="/img/google-play-icon.webp">
+        </a>
+    </button>
+    
+    
+    <div class="centerSmall textCenter footer">
+            <div class="footerSocialmedia">
+                <a href="" target="_blank">
+                    <i class="fa-brands fa-google-play socialMediaIcon"></i>
+                </a>
+                <a href="mailto:support@jhwatchfaces.com" target="_blank">
+                    <i class="fa-regular fa-envelope socialMediaIcon"></i>
+                </a>
+                <a href="https://www.instagram.com/jhwatchfaces/" target="_blank">
+                    <i class="fa fa-instagram socialMediaIcon"></i>
+                </a>
+                <a href="https://t.me/jhwatchfaces" target="_blank">
+                    <i class="fa fa-telegram socialMediaIcon"></i>
+                </a>
+            </div>
+            <p1 class="darkestSubText newLine">© 2023 JH Watchfaces</p1>
+            <p1 class="darkestSubText newLine">All Rights Reserved</p1>
+            <br>
+            <p1 class="darkestSubText newLine">Google Play and Google Play logos are trademarks of Google LLC</p1>
     </div>
-
-    <div class="sectionFeatured centerSmall textCenter">
-        <div class="headerTitle">
-            <h1 class="mainTextColor noMargin">FEATURED</h1>
-        </div>
-        <div class="featuredAppsColumns">
-            <!-- Featured App 1 -->
-            <div class="appBox hidden" style="--order: 1">
-                <h1 class="mainTextColor featuredAppTitlePaddingBottom noMargin appTitleSize">JHW Digital Bits 3</h1>
-                <div class="featuredAppLogo">
-                    <img class="featuredAppLogo appIconBorderRadius" src="./img/apps/jhw-digital-bits-3/logo.png">
-                </div>
-                <div class="downloadButtonBox">
-                    <a href="https://play.google.com/store/apps/details?id=com.jhwatchfaces.jhwdigitalbitsthree" class="downloadButton greenButton">Download</a>
-                </div>
-            </div>
-            <!-- Featured App 2 -->
-            <div class="appBox hidden" style="--order: 2">
-                <h1 class="mainTextColor featuredAppTitlePaddingBottom noMargin appTitleSize">Digital Pixel Plus</h1>
-                <div class="featuredAppLogo">
-                    <img class="featuredAppLogo appIconBorderRadius" src="./img/apps/digital-pixel-plus/logo.png">
-                </div>
-                <div class="downloadButtonBox">
-                    <a href="https://play.google.com/store/apps/details?id=com.jhwatchfaces.digitalpixelplus" class="downloadButton greenButton">Download</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-    <div class="spacer centerSmall textCenter">
-        <a class="mainTextColor" id="apps">--------</a>
-    </div>
-
-    <div class="sectionPortfolio centerBig textCenter">
-        <div class="headerTitle">
-            <h1 class="mainTextColor noMargin">PORTFOLIO</h1>
-        </div>
-        <div class="portfolioAppsColumns">
-            <!-- Portfolio App 1 -->
-            <div class="appBox appBoxPortfolio hidden" style="--order: 2">
-                <h1 class="mainTextColor portfolioAppTitlePaddingBottom appTitleSize noMargin">App Name 1</h1>
-                <div class="portfolioAppLogo">
-                    <img class="portfolioAppLogo appIconBorderRadius" src="https://placehold.jp/512x512.png">
-                </div>
-                <div class="downloadButtonBox">
-                    <a class="downloadButton grayButton" href="google.com">Download</a>
-                </div>
-            </div>
-            <!-- Portfolio App 2 -->
-            <div class="appBox appBoxPortfolio hidden" style="--order: 3">
-                <h1 class="mainTextColor portfolioAppTitlePaddingBottom appTitleSize noMargin">APP NAME WITH TWO LINES</h1>
-                <div class="portfolioAppLogo">
-                    <img class="portfolioAppLogo appIconBorderRadius" src="https://placehold.jp/512x512.png">
-                </div>
-                <div class="downloadButtonBox">
-                    <a class="downloadButton grayButton" href="google.com">Download</a>
-                </div>
-            </div>
-            <!-- Portfolio App 3 -->
-            <div class="appBox appBoxPortfolio hidden" style="--order: 4">
-                <h1 class="mainTextColor portfolioAppTitlePaddingBottom appTitleSize noMargin">APP NAME WITH TWO LINES</h1>
-                <div class="portfolioAppLogo">
-                    <img class="portfolioAppLogo appIconBorderRadius" src="https://placehold.jp/512x512.png">
-                </div>
-                <div class="downloadButtonBox">
-                    <a class="downloadButton grayButton" href="google.com">Download</a>
-                </div>
-            </div>
-            <!-- Portfolio App 4 -->
-            <div class="appBox appBoxPortfolio hidden" style="--order: 5">
-                <h1 class="mainTextColor portfolioAppTitlePaddingBottom appTitleSize noMargin">APP NAME WITH TWO LINES</h1>
-                <div class="portfolioAppLogo">
-                    <img class="portfolioAppLogo appIconBorderRadius" src="https://placehold.jp/512x512.png">
-                </div>
-                <div class="downloadButtonBox">
-                    <a class="downloadButton grayButton" href="google.com">Download</a>
-                </div>
-            </div>
-            <!-- Portfolio App 5 -->
-            <div class="appBox appBoxPortfolio hidden" style="--order: 6">
-                <h1 class="mainTextColor portfolioAppTitlePaddingBottom appTitleSize noMargin">APP NAME WITH TWO LINES</h1>
-                <div class="portfolioAppLogo">
-                    <img class="portfolioAppLogo appIconBorderRadius" src="https://placehold.jp/512x512.png">
-                </div>
-                <div class="downloadButtonBox">
-                    <a class="downloadButton grayButton" href="google.com">Download</a>
-                </div>
-            </div>
-
-
-
-        </div>
-    </div>
-
-
 </body>
 
 <footer>
-    <button class="materialYouButton">
-        <a href="https://play.google.com/store/games?device=windows">
-          <img src="./img/google-play-icon.png">
-        </a>
-    </button>
-    <script src="./js/animations.js"></script>
-    <script src="./js/navbar.js"></script>
-    <script src="https://kit.fontawesome.com/a43959776c.js" crossorigin="anonymous"></script>
+
+
+
+
+    <script type="module" src="/js/index.js"></script>
+    <script src="/js/animations.js"></script>
+    <script src="/js/navbar.js"></script>
+    <script async src="https://kit.fontawesome.com/a43959776c.js" crossorigin="anonymous"></script>
 </footer>
 </html>
