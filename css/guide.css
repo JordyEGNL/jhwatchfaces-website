@@ -1,7 +1,7 @@
 .sectionGuide {
     display: grid;
-    grid-template-columns: repeat( auto-fit, minmax(300px, 1fr) );
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
 }
 
 /* Guide boxes */
@@ -15,7 +15,11 @@
     font-family: 'Roboto', sans-serif;
     word-wrap: break-word;
     text-align: left;
-    padding: 10px;
+    padding: 15px;
+
+    border-color: var(--appBoxBorderColor);
+    border-style: solid;
+    border-width: 4px;
 }
 
 /* Images in guide boxes */
@@ -36,19 +40,55 @@
 
 
 
-
 .sectionGuide > div a {
     display: block;
     margin: 0;
     padding: 10px;
     height: max-content;
     font-family: Roboto;
+    font-size: 18px;
 }
 
 .sectionGuide > div h1 {
     word-wrap: break-word;
-    font-size: 1.4rem;
+    font-size: 2.1rem;
     text-align: center;
-    padding: 4% 0;
-    color: var(--primaryTextThemed);
+    padding: 10px;
+    color: var(--secondaryTextThemed);
+}
+
+
+.guideSelector {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.activeButtonGuide {
+    background-color: var(--primaryContainer);
+    color: var(--primaryContainerText);
+} 
+
+.guideSelector > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0px;
+}
+
+.guideSelector > div a {
+    display: grid;
+}
+
+.guideSelector > div > div {
+    padding: 0 25px;
+    width: 100%;
+    white-space: nowrap;
+}
+
+.guideSelector .title {
+    font-size: 1.8rem;
+    font-weight: 700;
 }

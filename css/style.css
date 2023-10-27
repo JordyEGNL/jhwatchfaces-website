@@ -23,31 +23,36 @@
 
 html { scroll-behavior: smooth;}
 
-
-.fadeIn {
-    opacity: 1;
-}
-
-
+.fadeIn { opacity: 1;}
 
 @media (prefers-color-scheme: dark) {
     :root {
         --backgroundColorMainTheme: #07283e;
-        --backgroundColor: #030404;
-        --backgroundSubColor: #121314;
+        --backgroundColor: #161618;
+        --backgroundSubColor: #1e1e21;
         --backgroundTertiaryColor: #232626;
-        --appBoxColor: #1a1c1e;
-        --primaryText: #f2f2f2;
-        --primaryTextThemed: #d5e3ff;
-        --secondaryText: #b5b5b5;
-        --tertiaryText: #515151;
-        --primaryContainer: #004787;
-        --primaryContainerText: #d5e3ff;
-        --primaryContainerHover: #00315f;
+        --appBoxColor: #212529;
+        --appBoxBorderColor: #42474e;
+        --appBoxColorHover: #172230;
 
-        --secondaryContainer: #3d4758;
-        --secondaryContainerText: #d9e3f8;
-        --secondaryContainerHover: #273141;
+        --primaryText: #cde2f6;
+        --primaryTextThemed: #81b0f6;
+        --secondaryText: #b5c7d6;
+        --secondaryTextThemed: #cee5ff;
+        --tertiaryText: #515151;
+
+        --primaryContainer: #004a76;
+        --primaryContainerDarker: #003353;
+        --primaryContainerText: #cee5ff;
+        --primaryContainerHover: #003353;
+
+        --secondaryContainer: #3a4857;
+        --secondaryContainerText: #d5e4f7;
+        --secondaryContainerHover: #233240;
+        
+        --secondaryContainerActive: #354f7d;
+
+        --primaryTextWhite: #f6f6f6;
     }
 }
 
@@ -57,28 +62,36 @@ html { scroll-behavior: smooth;}
         --backgroundSubColor: #e4ecff;
         --backgroundTertiaryColor: #dbdbdb;
         --appBoxColor: #d5e3ff;
-        --primaryText: #1d2a2a;
-        --primaryTextThemed: #002248;
-        --secondaryText: #5c5e5e;
-        --primaryContainer: #205fa6;
-        --primaryContainerText: #ffffff;
-        --primaryContainerHover: #205fa6;
+        --appBoxBorderColor: #b6c9f3;
+        --appBoxColorHover: #a0c1eb;
 
-        --secondaryContainer: #555f71;
-        --secondaryContainerText: #ffffff;
-        --secondaryContainerHover: #d9e3f8;
+        --primaryText: #1d2a2a;
+        --primaryTextThemed: #1e406b;
+        --secondaryText: #5c5e5e;
+        --tertiaryText: #515151;
+
+        --primaryContainer: #296bb6;
+        --primaryContainerDarker: #255e9f;
+        --primaryContainerText: #ffffff;
+        --primaryContainerHover: #1f4c7f;
+
+        --secondaryContainer: #b9c4d9;
+        --secondaryContainerText: #1f1f1f;
+        --secondaryContainerHover: #b0c6f4;
+                
+        --secondaryContainerActive: #536b9e;
+        
+        --primaryTextWhite: #080808;
     }
 }
 
-
-
 .mainContent {
-    animation: fadeIn 0.5s 1 ease-in;
+    animation: fadeIn 0.35s 1 ease-in;
     margin-top: clamp(4vh, 14vh/2, 9vh); /* margin for navbar */
 }
 
 .footer {
-    animation: fadeIn 0.5s 1 ease-in;
+    animation: fadeIn 0.35s 1 ease-in;
 }
 
 
@@ -92,18 +105,16 @@ html { scroll-behavior: smooth;}
 }
 
 /* animations with javascript and css */
-.fadeLeftOnLoad {
-    opacity: 0;
-    transform: translateX(-20px);
-    filter: blur(5px);
-    transition: all calc(0.45s) ease-in-out;
+.fadeUpOnLoad {
+    transform: translateY(+25px);
+    filter: blur(3px);
+    transition: all calc(0.25s) ease-out;
 }
 
 
 .show {
-    opacity: 1;
     filter: blur(0px);
-    transform: translateX(0);
+    transform: translateY(0);
 }
 
 /* People who prefer no animations */
@@ -149,33 +160,43 @@ html { scroll-behavior: smooth;}
     text-decoration: none;
 }
 
+/* Default navbar, to set color on active later */
+.navbarItems li  a {
+    padding: 15px 30px;
+    border-radius: 150px;
+}
+
+.navbarItems li > a.active {
+    background-color: var(--primaryContainerDarker);
+    color: var(--primaryContainerText);
+   
+}
+
+
 .navbarItems a {
-    color: var(--primaryText);
+    color: var(--secondaryContainerText);
     font-size: 1.1rem;
-    padding: 5px 0;
-    margin: 0 30px;
-    transition: margin 0.5s ease;
-    text-decoration: none; /* Removes underline for links */
+    padding: 2px 0;
+    margin: 0 10px;
+    transition: all 0.25s ease;
+    text-decoration: none;
     font-weight: 500;
-    letter-spacing: 1px;
+    letter-spacing: 0px;
 }
 
 /* Change color when hovering over items */
 .navbarItems a:hover {
     filter: brightness(80%);
-}
-
-.navbarItems a.active {
-    color: var(--mainThemeColor);
+    background-color: var(--secondaryContainerHover);
 }
 
 .navbarMain {
-    display: flex;
+    display: none;
     align-items: center;
 }
 
 .navbarMain span {
-    color: var(--primaryText);
+    color: var(--primaryTextWhite);
     font-size: 28px;
     margin-right: 3px;
     cursor: pointer;
@@ -197,7 +218,7 @@ html { scroll-behavior: smooth;}
     }
 }
 
-@media (max-width: 700px) {
+@media (max-width: 950px) {
     #navbarIcon {
         display: block;
     }
@@ -220,42 +241,28 @@ html { scroll-behavior: smooth;}
         transition: all 0.2s ease;
     }
 
-    .navbarItems a{
+    .navbarItems li > a {
         display: block;
         margin: 1px 0;
-        padding: 16px 25px;
+        padding: 18px 25px;
         border-radius: 20px;
         width: 70%;
     }
 
-    .navbarItems a:link {
-        color: var(--primaryText);
-        background-color: var(--backgroundSubColor);
-    }
-
-    .navbarItems a:hover  {
-        background-color: var(--backgroundTertiaryColor);
-        border-radius: 20px;
-    }
-
-    .navbarItems a.active {
+    .navbarItems li > a.active {
+        background-color: var(--primaryContainerDarker);
         color: var(--primaryContainerText);
-        background-color: var(--primaryContainer);
-        border-radius: 20px;
+       
     }
 
-    .navbarItems a.active:hover {
-        background-color: var(--primaryContainerHover);
+    .navbarMain {
+        display: block;
     }
-
-
 
     .navbarItems.open {
         right: -5%;
     }
 }
-
-
 
 
 /* Background */
@@ -267,11 +274,7 @@ body {
     margin: 0;
     user-select: none;
     -webkit-user-select: none;
-
 }
-
-
-
 
 /* Almost every tekstbox you see */
 .primaryText {
@@ -288,13 +291,11 @@ body {
 }
 
 /* Boxes with the apps in it */
-
 .appBoxCoupon {
     background-color:  var(--appBoxColor);
 }
 
 /* Primary button rich colored */
-
 .primaryButton {
     color: var(--primaryContainerText);
     background-color: var(--primaryContainer);
@@ -324,7 +325,6 @@ body {
     background-color: var(--secondaryContainerHover);
 }
 
-
 .grayButton {
     color: var(--secondaryContainerText);
     background-color: var(--secondaryContainer);
@@ -332,7 +332,6 @@ body {
     border-radius: 15px;
     padding: 1.5rem;
 }
-
 
 h1 {
     font-family: 'Roboto', sans-serif;
@@ -344,8 +343,6 @@ a {
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
 }
-
-
 
 .noMargin {
     margin: 0;
@@ -385,7 +382,7 @@ a {
 }
 
 .centerBig {
-    width: clamp(10rem, 90%, 95rem);
+    width: clamp(10rem, 90%, 90rem);
     padding: 0.5rem 1rem;
     margin: auto;
 }
@@ -399,39 +396,36 @@ a {
 }
 
 .sectionHeader > h1 {
-    font-size: 2.45rem;
+    font-size: 3.45rem;
     margin-bottom: 1rem;
     font-family: 'Roboto', sans-serif;
     font-weight: 700;
     letter-spacing: -1px;
+    width: 100%;
+    color: var(--primaryTextThemed);
 }
 
 .sectionHeader > p {
-    font-size: 1.1rem;
+    font-size: 1.15rem;
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
-    letter-spacing: 1px;   
-    max-width: clamp(200px, 90%, 400px);
-    margin: 0 auto 1rem auto;
+    letter-spacing: 1px;  
+    width: 100%;
+    margin: 0 auto;
     padding: 10px 0;
     color: var(--secondaryText);
 }
 
-
 .sectionHeader > a {
     display: block;
     max-width: 200px;
-    margin: 0 auto;
+    margin: auto 0 auto auto;
 }
 
 .sectionHeader > a img {
     max-width: 200px;
     display: flex;
-    margin: 0 auto;
-}
-
-.sectionHeader > a img:not(last-child) {
-    padding-bottom: 20px; /* give every item padding but the last */
+    margin: 30px auto;
 }
 
 @media screen and (min-width: 1201px) {
@@ -441,7 +435,6 @@ a {
     }
 }
 
-
 .headerTitle {
     margin-top: 0.5rem;
     margin-bottom: 1.5rem;
@@ -449,9 +442,19 @@ a {
 
 .headerTitle > h1 {
     flex: 1;
-    font-size: 2.45rem;
+    font-size: 2.75rem;
     font-family: 'Roboto', sans-serif;
     font-weight: 700;
+    color: var(--primaryText);
+}
+
+.headerTitle > h2 {
+    flex: 1;
+    font-size: 1.7rem;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    color: var(--secondaryTextThemed);
+    margin: 0 0 10px 0;
 }
 
 .headerTitle > a {
@@ -462,18 +465,6 @@ a {
     margin-top: 0;
     margin-bottom: 0;
 }
-
-
-
-
-
-
-/* Every normal tekst including headings and app info */
-
-
-/* Header title, developer name */
-
-
 
 /* Text under header, information about developer */
 .darkerSubText {
@@ -488,8 +479,6 @@ a {
     font-weight: 400;
 }
 
-
-
 /* Google Play badge under developer logo */
 .headerGooglePlayBadge {
     max-width: 250px;
@@ -503,21 +492,7 @@ a {
     border-top: 3px solid #aeaeae;
     width: 35px;
     scroll-margin: 1.5em;
-
 }
-
-[featured] {
-    scroll-margin-top: 2ex;
-}
-
-
-
-/* App box layout and spacing */
-
-
-
-
-
 
 .portfolioAppTitlePaddingBottom {
     padding-bottom: 1rem;
@@ -531,21 +506,9 @@ a {
     margin: 15px 0;
 }
 
-
-
-.downloadButtonBox {
-    border-radius: 15px;
-    padding: 1.0rem 0rem;
-    text-transform: uppercase;
-    margin: 15px 0;
-    font-weight: bold;
-    font-size: 22px;
-}
-
 .downloadButton > span {
     color: var(--secondaryContainerText)
 }
-
 
 .downloadButton {
     text-transform: uppercase;
@@ -554,8 +517,7 @@ a {
     text-align: center;
     display: inline-block;
     width: clamp(50px, 90%, 150px);
-    margin: 0 auto;
-    
+    margin: 0 auto;    
 }
 
 .primaryButton:hover {
@@ -575,14 +537,12 @@ a {
     
 }
 
-
-
-
 /* show header info and featured apps next to each other */
 .headerColumns {
+    margin: 15vh auto 5vh auto;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    align-items: stretch;
+    align-items: stretch;    
 }
 
 .headerColumns > div {
@@ -611,24 +571,30 @@ a {
     gap: 1rem;
 }
 
-
-
 /* Set header dev info and image to under each other on mobile */
-@media (max-width: 1200px) {
+@media (max-width: 1250px) {
     .headerColumns {
-        display: inline;
+        display: flex;
+        flex-direction: column;
+        padding-top: 0;
+        margin-top: 5pc;
+        margin-bottom: 0;
         align-items: center;
+    }
+    .headerColumns > div {
+        margin: 0 auto;
     }
     .removeDesktop {
         display: block;
     }
-    .centerBigDesktop {
-        width: clamp(10rem, 90%, 95rem);
-        padding: 0.5rem 1rem;
-        margin: auto;
-    }
     .sectionHeader {
         padding: 0 2%;
+    }
+    .sectionHeader > a {
+        margin: 0 auto;
+    }
+    .headerColumns > div {
+        text-align: center;
     }
 }
 @media (max-width: 600px) {
@@ -642,47 +608,82 @@ a {
 .portfolioAppsColumns {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 1rem;
+    gap: 1.5rem;
 }
 
-
 /* The whole app box including bg */
-.appsColumns > div {
-    border-radius: 25px;
-    flex-grow: 1;
-    justify-content: space-between;
+.appsColumns > a > div {
     flex-direction: column;
+    height: 100%;
 
     /* background-color: red; */
-    padding: 25px 20px;
+    padding: 0;
+    transition: all 0.25s ease-in-out;
+}
+
+.appsColumns > a {
+    overflow: hidden; /* removes overflow from img zoom */
     background-color: var(--appBoxColor);  
-    transition: all 0.45s ease-in-out; 
+    border-color: var(--appBoxBorderColor);
+    border-style: solid;
+    border-radius: 25px;
+    border-width: 4px;
+}
+
+.appsColumns > a > div:hover {
+    background-color: var(--appBoxColorHover);
+    cursor: pointer;
+}
+
+.appsColumns > a:hover > div {
+    background-color: var(--appBoxColorHover);
+}
+
+.appsColumns .text {
+    padding: 1rem 1.4rem;
 }
 
 /* App title */
-.appsColumns > div h1 {
+.appsColumns h1 {
     font-size: 1.8rem;
     font-family: 'Roboto', sans-serif;
     font-weight: 700;
     color: var(--primaryText);
-    margin: 0;
-    text-align: center;
+    margin: 10px 0 10px 0;
+    text-align: left;
+}
+
+/* App small text */
+.appsColumns h2 {
+    font-size: 1.2rem;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    color: var(--secondaryText);
+    margin: 10px 0 10px 0;
+    text-align: left;
 }
 
 /* App logo img  */
-.appsColumns > div img {
+.appsColumns img {
     max-width: 100%;
-    border-radius: 25px;
+    transition: all 0.25s ease;
+}
+
+.appsColumns a:hover img {
+    transform: scale(1.03);
 }
 
 .appsColumns .blur-load {
     max-width: 100%;
-    border-radius: 25px;
-    margin: 20px auto;
+    border-radius: 21px;
+    overflow: hidden;
+    transition: all 0.25s ease;
 }
 
-
-
+/* Removes those ugly lines around the app title, href is set above div not on title itself */
+.appsColumns a {
+    text-decoration: none;
+}
 
 /* Download button */
 .appsColumns > div a {
@@ -692,12 +693,13 @@ a {
     margin: 0;
     font-weight: bold;
     font-size: 22px;
+    text-decoration: none;    
 }
-
 
 .featuredAppsColumns > div {
-    display: flex; /* For portfolio this is done with js to unhide the first 8 */
+    display: flex; /* For portfolio this is done with js to unhide the first 12 */
 }
+
 /* Javascript loads more items when load more button is clicked */
 .loadMoreItems {
     display: none;
@@ -711,7 +713,7 @@ a {
     flex-direction: column;
     display: flex;
     background-color: var(--appBoxColor);  
-    transition: all 0.45s ease-in-out; 
+    transition: all 0.25s ease-in-out; 
 }
 
 @media (max-width: 600px) {
@@ -739,9 +741,8 @@ a {
     margin: 0 auto;
 }
 
-
 .footer {
-    margin-bottom: 5%;
+    margin: 2% auto;
 }
 
 /* Button on bottom of mobile screens */
@@ -763,7 +764,7 @@ a {
         position: fixed;
         bottom: 20px; 
         right: 20px; 
-        transition: all 0.45s ease-in-out;
+        transition: all 0.25s ease-in-out;
     }
     .materialYouButton:hover {
         transform: scale(1.03);
@@ -773,28 +774,24 @@ a {
     }
 }
 
-
 .materialYouButton img {
     position: relative;
     width: 60%;
     top: 2px;
 }
 
-
-
 .appIconBorderRadius {
     border-radius: 25px;
 }
 
-
+/* Social media box */
+/*  */
 .socialMediaColumns {
     display: grid;
     grid-template-columns: repeat( auto-fit, minmax(300px, 1fr) );
     gap: 10px;
 }
 
-/* Social media box */
-/*  */
 .socialMediaColumns > a {
     border-radius: 25px;
     display: flex;
@@ -802,10 +799,15 @@ a {
     padding: 5%;
     background-color: var(--appBoxColor);
     text-decoration: none;
+    transition: all 0.25s ease-in-out;
+
+    border-color: var(--appBoxBorderColor);
+    border-style: solid;
+    border-width: 4px;
 }
 
 .socialMediaColumns > a:hover {
-    background-color: var(--primaryContainer);
+    background-color: var(--appBoxColorHover);
 }
 /*  */
 /* Social media box */
@@ -844,33 +846,94 @@ a {
     display: block;
 }
 
+.footer {
+    display: grid;
+    gap: 5px;
+    grid-template-columns: 30% auto 30%;
+    margin-bottom: 50px;
+}
 
+@media (max-width: 1350px) {
+    .footer {
+        grid-template-columns: 1fr;
+    }
+}
 
+.footer .footer-center {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
 
+.footer .footer-center a {
+    display: block;
+    padding: 0 20px 0 20px;
+}
+
+.footer .footer-left {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: Roboto;
+}
+
+.footer .footer-left > h1 {
+    color: var(--primaryTextThemed);
+}
+
+.footer .footer-left > p {
+    font-size: 1.2rem;
+    font-family: Roboto;
+    font-weight: 500;
+    color: var(--secondaryText);
+}
+
+.footer .footer-center a {
+    font-size: 1rem;
+    font-family: Roboto;
+    font-weight: 500;
+}
+
+.footer .footer-right {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.footer .footer-copyright {
+    color: var(--secondaryText);
+}
+
+.footer .footer-about a {
+    display: block;
+}
 
 .footer i {
     font-size: 44px;
-    margin: 10px;
-    margin-bottom: 30px;
 }
 
 .footer a {
     color: var(--primaryText);
+    font-size: 1.2rem;
     text-decoration: none;
-}
-
-.socialMediaIcon {
-    color: var(--primaryText);
     transition: all 0.25s ease-in-out;
 }
 
-.socialMediaIcon:hover {
-    color: var(--mainThemeColor);
+.footer .footer-center a:hover {
+    color: var(--primaryTextThemed);
 }
 
-
-
-
+.footerSocialmedia {
+    margin-bottom: 10px;
+}
 
 /* Google font layout */
 .material-symbols-outlined {
@@ -882,7 +945,6 @@ a {
   color: var(--primaryText);
 }
 
-
 /* Load more button at bottom of applist */
 .loadmoreButton {
     background-color: var(--primaryContainer);
@@ -892,14 +954,14 @@ a {
     border-radius: 30px;
     display: inline-block;
     font-size: 18px;
-    margin: 1%;
+    font-weight: 500;
+    margin: 3rem 0 1% 0;
 }
 
 .loadmoreButton:hover {
     background-color: var(--primaryContainerHover);
     cursor: pointer;
 }
-
 
 .privacyColumns {
     display: grid;
@@ -909,31 +971,23 @@ a {
 
 .privacyColumns > div {
     margin-bottom: 25px;
-    border-radius: 25px;
+    border-radius: 15px;
     display: flex;
     align-items: center;
     padding: 5%;
-    background-color: var(--appBoxColor);
     flex-grow: 1;
     justify-content: space-between;
     flex-direction: column; 
-    transition: all 0.45s ease-in-out; 
+    transition: all 0.25s ease-in-out; 
+    border-color: var(--appBoxBorderColor);
+    border-style: solid;
+    border-width: 2px;
 }
 
 .privacyColumns > div a {
     white-space: pre-line;
     margin: 0 auto;
     font-size: 24px;
-    color: var(--primaryTextThemed);
+    color: var(--primaryText);
     text-align: center; /* only when there are not many lines */
-}
-
-
-
-.mainContent {
-    background-image: radial-gradient(
-        circle-farthest-side at 100px 100px,
-        #eaeaea 0%,
-        transparent 100%
-    );
 }

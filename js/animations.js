@@ -1,23 +1,23 @@
 // This function shows hidden elements by adding the show class.
 const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      console.log(entry);
-      if (entry.isIntersecting) {
-        entry.target.classList.add("show");
-      } else {
-        entry.target.classList.remove("show");
-      }
-    });
+  entries.forEach((entry) => {
+    console.log(entry);
+    if (entry.isIntersecting) {
+      entry.target.classList.add("show");
+    } else {
+      entry.target.classList.remove("show");
+    }
   });
-  
+});
+
 // This function gets all the elements with the hidden class and adds them to the observer.
-const hiddenElements = document.querySelectorAll('.fadeLeftOnLoad');
+const hiddenElements = document.querySelectorAll('.fadeUpOnLoad');
 hiddenElements.forEach((element) =>  observer.observe(element));
 
 document.addEventListener('DOMContentLoaded', function() {
   var loadMoreItems = document.querySelectorAll('.loadMoreItems');
 
-  for (var i = 0; i < 8; i++) {
+  for (var i = 0; i < 12; i++) {
       if (loadMoreItems[i]) {
           loadMoreItems[i].classList.remove('loadMoreItems');
           loadMoreItems[i].style.display = 'flex';
@@ -61,3 +61,25 @@ blurredImageDiv.forEach(div => {
     img.addEventListener("load", loaded)
   }
 });
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  showOption(1);
+});
+
+function showOption(optionNumber) {
+  for (var i = 1; i <= 3; i++) {
+    var optionDiv = document.getElementById('option' + i);
+    var optionButton = document.getElementById('button' + i);
+    if (i === optionNumber) {
+      optionDiv.style.display = 'block';
+      optionButton.classList.add('primaryButton');
+      optionButton.classList.remove('secondaryButton');
+    } else {
+      optionDiv.style.display = 'none';
+      optionButton.classList.add('secondaryButton');
+      optionButton.classList.remove('primaryButton');
+    }
+  }
+}

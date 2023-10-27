@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,8 +19,10 @@
 
     <meta name="og:title" property="og:title" content="JH Watchfaces - Installation Guide">
     <meta name="description" content="JH Watchfaces. Making amoled friendly watch faces for your Wear OS smartwatch.">
-    <meta name="og:description" content="JH Watchfaces. Making amoled friendly watch faces for your Wear OS smartwatch.">
-    <meta name="keywords" content="JH Watchfaces, watch faces, watchfaces, watchface, galaxy watch, galaxywatch, samsung, watch active, google play store">
+    <meta name="og:description"
+        content="JH Watchfaces. Making amoled friendly watch faces for your Wear OS smartwatch.">
+    <meta name="keywords"
+        content="JH Watchfaces, watch faces, watchfaces, watchface, galaxy watch, galaxywatch, samsung, watch active, google play store">
     <link rel="canonical" href="https://jhwatchfaces.com/guide/">
     <meta property="og:url" content="https://jhwatchfaces.com/guide/" />
     <meta property="og:type" content="website" />
@@ -35,6 +38,7 @@
     -->
 
 </head>
+
 <body>
     <!-- Navbar -->
     <div class="navbarFull">
@@ -59,18 +63,41 @@
 
     <br>
     <div class="mainContent" id="mainContent">
-        <div class="centerBig">
-          
+        <div class="centerSmall">
+
             <div class="headerTitle textLeft">
                 <h1>Instalation Guide</h1>
-                <a>Option 1 (via Google Play app) is the recommended installation method</a>
+                <a>It is recommended to install via the Google Play app directly</a>
             </div>
-            
-            <div class="sectionGuide textCenter privacyBox">
+
+            <div class="guideSelector">
+                <div class="secondaryButton" id="button1" onclick="showOption(1)">
+                    <div>
+                        <a class="title">Option 1</a>
+                        <a>Google Play app</a>
+                    </div>
+                </div>
+                <div class="secondaryButton" id="button2" onclick="showOption(2)">
+                    <div>
+                        <a class="title">Option 2</a>
+                        <a>Google Play website</a>
+                    </div>
+                </div>
+                <div class="secondaryButton" id="button3" onclick="showOption(3)">
+                    <div>
+                        <a class="title">Option 3</a>
+                        <a>Phone companion app</a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="sectionGuide textCenter">
                 <!-- Will place here how to install -->
+
                 <!-- First guide -->
-                <div class="fadeLeftOnLoad" style="--order: 1">
-                    <h1>Option 1 - Via Google Play App</h1>
+                <div class="fadeUpOnLoad" style="display:block;" id="option1">
+                    <h1>Via Google Play app</h1>
                     <a>
                         1. Open the Google Play page of the watch face you want to install on your phone.
                     </a>
@@ -98,8 +125,8 @@
 
 
                 <!-- Second guide -->
-                <div class="fadeLeftOnLoad" style="--order: 2">
-                    <h1>Option 2 - Via Google Play Website</h1>
+                <div class="fadeUpOnLoad" style="display:none;" id="option2">
+                    <h1>Via Google Play website</h1>
                     <a>
                         1. Copy the download link of the watch face and open it in a web browser
                     </a>
@@ -132,8 +159,8 @@
 
 
                 <!-- Third guide -->
-                <div class="fadeLeftOnLoad" style="--order: 3">
-                    <h1>Option 3 - Via phone companion app</h1>
+                <div class="fadeUpOnLoad" style="display:none;" id="option3">
+                    <h1>Via phone companion app</h1>
                     <a>
                         1. Open the Google Play page of the watch face you want to install on your phone.
                     </a>
@@ -152,56 +179,73 @@
                     </div>
 
                     <a>
-                        5. The Play Store page of the watch face will be opened on your watch, install the watch face from there.
+                        5. The Play Store page of the watch face will be opened on your watch, install the watch face
+                        from there.
                     </a>
 
-                        <img draggable="false" src="/img/guide/companionapp-2.webp" loading="lazy">
+                    <img draggable="false" src="/img/guide/companionapp-2.webp" loading="lazy">
                     <a>
                         6. The watch face will be installed on your watch shortly.
                     </a>
                 </div>
 
-            
-        
+
+
+            </div>
+        </div>
+    </div>
+
+    <div class="centerBig footer">
+        <div class="footer-left">
+            <h1>JH Watchfaces</h1>
+            <p>Making amoled friendly watch faces for your Wear OS smartwatch.</p>
+        </div>
+
+        <div class="footer-center">
+            <div>
+                <a href="https://play.google.com/store/apps/dev?id=5003816928530763896" target="_blank" rel="nofollow">
+                    <i class="fa-brands fa-google-play"></i>
+                </a>
+            </div>
+            <div>
+                <a href="mailto:support@jhwatchfaces.com">
+                    <i class="fa-regular fa-envelope"></i>
+                </a>
+            </div>
+            <div>
+                <a href="https://instagram.com/jhwatchfaces" target="_blank" rel="nofollow">
+                    <i class="fa fa-instagram"></i>
+                </a>
+            </div>
+            <div>
+                <a href="https://t.me/jhwatchfaces" target="_blank" rel="nofollow">
+                    <i class="fa fa-telegram"></i>
+                </a>
             </div>
         </div>
 
-        <div class="spacer centerSmall textCenter" id="footer"></div>
+        <div class="footer-right">
+            <p class="footer-about">
+                <a class="footer-copyright">© 2023 JH Watchfaces - All Rights Reserved</a><br>
+
+                <a class="footer-copyright">Google Play and Google Play logos are trademarks of Google LLC</a>
+            </p>
+        </div>
     </div>
+
 </body>
 
 <footer>
 
     <button class="materialYouButton">
         <a href="https://play.google.com/store/apps/dev?id=5003816928530763896">
-          <img src="/img/google-play-icon.webp">
+            <img src="/img/google-play-icon.webp">
         </a>
     </button>
-
-    <div class="centerSmall textCenter footer">
-        <div class="footerSocialmedia">
-            <a href="" target="_blank">
-                <i class="fa-brands fa-google-play socialMediaIcon"></i>
-            </a>
-            <a href="mailto:support@jhwatchfaces.com" target="_blank">
-                <i class="fa-regular fa-envelope socialMediaIcon"></i>
-            </a>
-            <a href="https://www.instagram.com/jhwatchfaces/" target="_blank">
-                <i class="fa fa-instagram socialMediaIcon"></i>
-            </a>
-            <a href="https://t.me/jhwatchfaces" target="_blank">
-                <i class="fa fa-telegram socialMediaIcon"></i>
-            </a>
-        </div>
-        <p1 class="darkestSubText newLine">© 2023 JH Watchfaces</p1>
-        <p1 class="darkestSubText newLine">All Rights Reserved</p1>
-        <br>
-        <p1 class="darkestSubText newLine">Google Play and Google Play logos are trademarks of Google LLC</p1>
-    </div>
-
 
     <script src="/js/navbar.js"></script>
     <script src="/js/animations.js"></script>
     <script async src="https://kit.fontawesome.com/a43959776c.js" crossorigin="anonymous"></script>
 </footer>
+
 </html>
